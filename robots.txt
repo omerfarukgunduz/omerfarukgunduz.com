@@ -1,0 +1,5 @@
+# https://omerfarukgunduz.com/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://omerfarukgunduz.com/sitemap.xml
