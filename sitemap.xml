@@ -8,4 +8,11 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://omerfarukgunduz.com/"/>
   </url>
+  <url>
+    <loc>https://omerfarukgunduz.com/iletisim.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://omerfarukgunduz.com/iletisim.html"/>
+  </url>
 </urlset>
