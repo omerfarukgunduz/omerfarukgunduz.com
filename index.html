@@ -162,8 +162,8 @@
             "position": 1,
             "item": {
               "@type": "WebApplication",
-              "name": "KYK Yurt Rezervasyon Sistemi",
-              "url": "https://camasirhanerandevu.com/",
+              "name": "FormFlow",
+              "url": "https://formflow.omerfarukgunduz.com/",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web"
             }
@@ -172,6 +172,17 @@
             "@type": "ListItem",
             "position": 2,
             "item": {
+              "@type": "WebApplication",
+              "name": "KYK Yurt Rezervasyon Sistemi",
+              "url": "https://camasirhanerandevu.com/",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
               "@type": "WebSite",
               "name": "Kişisel Portföy Web Sitesi",
               "url": "https://omerfarukgunduz.com/"
@@ -179,7 +190,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 3,
+            "position": 4,
             "item": {
               "@type": "WebSite",
               "name": "Özgüç Tadilat",
@@ -188,7 +199,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 5,
             "item": {
               "@type": "WebApplication",
               "name": "Çevrimiçi Grup Bilmece Kart Oyunu",
@@ -642,6 +653,68 @@
       background: radial-gradient(ellipse, rgba(139,92,246,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
+
+    /* ── Contact form ── */
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #f1f5f9;
+      background: rgba(255,255,255,0.04);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-input::placeholder { color: #64748b; }
+    .form-input:focus {
+      outline: none;
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.15);
+    }
+    .form-input.error { border-color: #ef4444; }
+    .error-message {
+      color: #f87171;
+      font-size: 0.8rem;
+      margin-top: 4px;
+      display: none;
+    }
+    .error-message.show { display: block; }
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 45%, #0ea5e9 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(124,58,237,0.35);
+    }
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(124,58,237,0.45);
+    }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .success-message {
+      background: rgba(16,185,129,0.12);
+      color: #6ee7b7;
+      border: 1px solid rgba(16,185,129,0.25);
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 500;
+      display: none;
+    }
+    .success-message.show { display: block; }
   </style>
 </head>
 
@@ -680,10 +753,10 @@
         <li><a class="nav-link rounded-full px-3.5 py-2" href="#services">Hizmetler</a></li>
         <li><a class="nav-link rounded-full px-3.5 py-2" href="#works">Referanslar</a></li>
         <li><a class="nav-link rounded-full px-3.5 py-2 hidden lg:block" href="#social">Sosyal</a></li>
-        <li><a class="nav-link rounded-full px-3.5 py-2" href="/iletisim.html">İletişim</a></li>
+        <li><a class="nav-link rounded-full px-3.5 py-2" href="#contact">İletişim</a></li>
       </ul>
 
-      <a href="/iletisim.html" class="btn-primary hidden items-center gap-2 md:inline-flex">
+      <a href="#contact" class="btn-primary hidden items-center gap-2 md:inline-flex">
         İletişime Geç
         <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
       </a>
@@ -705,7 +778,7 @@
         <li><a class="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/8 hover:text-white" href="#services">Hizmetler</a></li>
         <li><a class="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/8 hover:text-white" href="#works">İşlerim</a></li>
         <li><a class="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/8 hover:text-white" href="#social">Sosyal Medya</a></li>
-        <li><a class="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/8 hover:text-white" href="/iletisim.html">İletişim</a></li>
+        <li><a class="block rounded-xl px-4 py-3 text-sm font-medium text-slate-200 transition hover:bg-white/8 hover:text-white" href="#contact">İletişim</a></li>
       </ul>
     </div>
   </header>
@@ -874,6 +947,44 @@
 
           <!-- Project 1 -->
           <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-1">
+            <div class="card-accent w-full bg-gradient-to-r from-sky-500 to-indigo-500"></div>
+            <div class="p-6">
+              <div class="mb-4 flex items-start justify-between gap-3">
+                <div class="rounded-xl bg-sky-500/15 p-2.5 text-sky-300">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m20.25 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m20.25 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                  </svg>
+                </div>
+                <span class="rounded-full bg-emerald-400/10 px-2.5 py-1 text-xs font-semibold text-emerald-300 border border-emerald-400/20">Yayında</span>
+              </div>
+              <h3 class="text-base font-bold text-white sm:text-lg">FormFlow</h3>
+              <p class="mt-2.5 text-sm leading-relaxed text-slate-400">
+                Kurumsal iletişim formu altyapısı. Tek satır entegrasyonla formları merkezi panele bağlar;
+                domain doğrulama, SMTP iletimi, çoklu site yönetimi ve admin paneli sunar.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="tag">ASP.NET Core</span>
+                <span class="tag">Razor Pages</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">EF Core</span>
+                <span class="tag">MailKit</span>
+                <span class="tag">REST API</span>
+              </div>
+              <div class="mt-5 pt-4 border-t border-white/6">
+                <a href="https://formflow.omerfarukgunduz.com/" target="_blank" rel="noopener noreferrer"
+                   title="FormFlow — canlı site"
+                   class="text-sm font-semibold text-sky-300 transition hover:text-sky-200 flex items-center gap-1.5">
+                  Canlıda Gör
+                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-2">
             <div class="card-accent w-full bg-gradient-to-r from-violet-500 to-sky-500"></div>
             <div class="p-6">
               <div class="mb-4 flex items-start justify-between gap-3">
@@ -903,8 +1014,8 @@
             </div>
           </article>
 
-          <!-- Project 2 -->
-          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-2">
+          <!-- Project 3 -->
+          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-3">
             <div class="card-accent w-full bg-gradient-to-r from-sky-500 to-cyan-500"></div>
             <div class="p-6">
               <div class="mb-4 flex items-start justify-between gap-3">
@@ -929,8 +1040,8 @@
             </div>
           </article>
 
-          <!-- Project 3 -->
-          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-3">
+          <!-- Project 4 -->
+          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-4">
             <div class="card-accent w-full bg-gradient-to-r from-amber-500 to-orange-500"></div>
             <div class="p-6">
               <div class="mb-4 flex items-start justify-between gap-3">
@@ -955,8 +1066,8 @@
             </div>
           </article>
 
-          <!-- Project 4 -->
-          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-4">
+          <!-- Project 5 -->
+          <article class="project-card glass card-hover grad-border reveal overflow-hidden delay-5">
             <div class="card-accent w-full bg-gradient-to-r from-fuchsia-500 to-pink-500"></div>
             <div class="p-6">
               <div class="mb-4 flex items-start justify-between gap-3">
@@ -981,7 +1092,7 @@
             </div>
           </article>
 
-          <!-- Project 5 - Coming soon -->
+          <!-- Project 6 - Coming soon -->
           <article class="coming-soon reveal delay-5 overflow-hidden">
             <div class="card-accent w-full opacity-40" style="background:repeating-linear-gradient(90deg,rgba(139,92,246,0.4) 0px,rgba(236,72,153,0.4) 50%,rgba(139,92,246,0.4) 100%)"></div>
             <div class="flex h-full flex-col p-6">
@@ -1227,6 +1338,43 @@
                 <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.2.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.2-1.2-1.6-1.2-1.6-1-.6.1-.6.1-.6 1.1.1 1.8 1.2 1.8 1.2 1 .1 1.8.9 2.2 1.4.9.2 1.8.1 2.6-.4.1-.7.4-1.4.8-1.9-2.7-.3-5.6-1.3-5.6-6A4.7 4.7 0 0 1 6.9 8c-.2-.5-.5-1.6.1-3.2 0 0 1-.3 3.2 1.2A11 11 0 0 1 12 5.8c.6 0 1.2.1 1.8.2C16 4.5 17 4.8 17 4.8c.6 1.6.3 2.7.1 3.2a4.7 4.7 0 0 1 1.3 3.3c0 4.7-2.9 5.7-5.6 6 .5.4.9 1.2.9 2.5v3.7c0 .4.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
               </a>
             </div>
+
+            <!-- Contact form -->
+            <div class="mt-10 border-t border-white/8 pt-10">
+              <h3 class="mb-2 text-center text-lg font-semibold text-white">Mesaj Gönderin</h3>
+              <p class="mb-6 text-center text-sm text-slate-400">Sorularınız için formu doldurun, en kısa sürede yanıt vereceğiz.</p>
+
+              <div class="success-message" id="successMessage">
+                Mesajınız başarıyla gönderildi!
+              </div>
+
+              <form id="contactForm" class="mx-auto max-w-lg" novalidate>
+                <div class="mb-5">
+                  <label for="name" class="mb-1.5 block text-sm font-semibold text-slate-300">Ad Soyad *</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Adınız ve soyadınız" required>
+                  <span class="error-message" id="nameError">Lütfen adınızı girin.</span>
+                </div>
+
+                <div class="mb-5">
+                  <label for="email" class="mb-1.5 block text-sm font-semibold text-slate-300">E-posta *</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="ornek@email.com" required>
+                  <span class="error-message" id="emailError">Geçerli bir e-posta adresi girin.</span>
+                </div>
+
+                <div class="mb-5">
+                  <label for="subject" class="mb-1.5 block text-sm font-semibold text-slate-300">Konu</label>
+                  <input type="text" id="subject" name="subject" class="form-input" placeholder="Mesajınızın konusu">
+                </div>
+
+                <div class="mb-6">
+                  <label for="message" class="mb-1.5 block text-sm font-semibold text-slate-300">Mesaj *</label>
+                  <textarea id="message" name="message" class="form-input resize-y" style="min-height:120px" placeholder="Mesajınızı buraya yazın..." required></textarea>
+                  <span class="error-message" id="messageError">Lütfen mesajınızı yazın.</span>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-submit">Gönder</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -1392,6 +1540,96 @@
         glow.style.left = e.clientX + "px";
         glow.style.top = e.clientY + "px";
       }, { passive: true });
+    }
+
+    /* ── Contact form ── */
+    const API_KEY = "a3c9f510-731e-44a3-82d9-44e07be2789a";
+    const API_URL = "https://formflow.omerfarukgunduz.com/api/forms/submit";
+
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+      const successMessage = document.getElementById("successMessage");
+      const submitBtn = document.getElementById("submitBtn");
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function showError(fieldId, errorId, show) {
+        const field = document.getElementById(fieldId);
+        const error = document.getElementById(errorId);
+        field.classList.toggle("error", show);
+        error.classList.toggle("show", show);
+        return !show;
+      }
+
+      function showSuccess(text) {
+        successMessage.textContent = text;
+        successMessage.style.background = "rgba(16,185,129,0.12)";
+        successMessage.style.color = "#6ee7b7";
+        successMessage.style.borderColor = "rgba(16,185,129,0.25)";
+        successMessage.classList.add("show");
+        setTimeout(() => successMessage.classList.remove("show"), 5000);
+      }
+
+      function showFail(text) {
+        successMessage.textContent = text;
+        successMessage.style.background = "rgba(239,68,68,0.12)";
+        successMessage.style.color = "#fca5a5";
+        successMessage.style.borderColor = "rgba(239,68,68,0.25)";
+        successMessage.classList.add("show");
+        setTimeout(() => successMessage.classList.remove("show"), 6000);
+      }
+
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        let isValid = true;
+        isValid = showError("name", "nameError", !name) && isValid;
+        isValid = showError("email", "emailError", !validateEmail(email)) && isValid;
+        isValid = showError("message", "messageError", !message) && isValid;
+        if (!isValid) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Gönderiliyor...";
+
+        const messageContent = subject ? `Konu: ${subject}\n\n${message}` : message;
+
+        try {
+          const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "ngrok-skip-browser-warning": "true"
+            },
+            body: JSON.stringify({
+              apiKey: API_KEY,
+              senderName: name,
+              senderEmail: email,
+              messageContent: messageContent
+            })
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            showSuccess(data.message || "Mesajınız başarıyla gönderildi!");
+            contactForm.reset();
+          } else {
+            showFail(data.message || "Mesaj gönderilemedi.");
+          }
+        } catch (error) {
+          showFail("Bağlantı hatası: " + error.message);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Gönder";
+        }
+      });
     }
   </script>
 </body>
