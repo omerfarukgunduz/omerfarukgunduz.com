@@ -6,7 +6,7 @@ Yazılım geliştirme ve görsel içerik hizmetlerini tanıtan tek sayfalık ki�
 
 ## Teknoloji
 
-- **HTML5** — anasayfa, iletişim sayfası
+- **HTML5** — tek sayfa (`index.html`)
 - **CSS** — gömülü stiller (açık tema, responsive, `prefers-reduced-motion`)
 - **Vanilla JavaScript** — menü, scroll ilerleme, yazı animasyonu, FormFlow iletişim formu
 - **FormFlow API** — iletişim formu gönderimi
@@ -21,29 +21,6 @@ Harici UI framework yok; bağımlılık minimum.
 - SEO: canonical, Open Graph, Twitter kartları, Schema.org (`Person`, proje listesi)
 - Erişilebilirlik: skip link, ARIA, klavye ile menü kapatma
 
-## Dosya yapısı
-
-| Dosya | Açıklama |
-|--------|-----------|
-| `index.html` | Ana sayfa (stil + script tek dosyada) |
-| `iletisim.html` | Bağımsız iletişim formu (FormFlow) |
-| `ofg.png` | Favicon ve marka logosu |
-| `ofg_portre.png` | Hakkımda portresi ve paylaşım önizlemesi (sunucuda, repoda opsiyonel) |
-| `proje1.png` … `proje6.png` | Proje kartı ekran görüntüleri (sunucuda) |
-| `robots.txt`, `sitemap.xml` | Arama motoru |
-
 ## İletişim formu
 
-Formlar [FormFlow](https://formflow.omerfarukgunduz.com/) üzerinden gönderilir. API anahtarı `index.html` ve `iletisim.html` içinde tanımlıdır; FormFlow panelinde site domain’inin doğrulanmış olması gerekir.
-
-## Yerel önizleme
-
-```bash
-python3 -m http.server 8080
-```
-
-Tarayıcıda `http://localhost:8080/` açın. Statik dosyalar (portre, proje görselleri) yerelde yoksa kartlarda placeholder görünür.
-
-## Dağıtım
-
-Statik dosyalar IIS / Plesk köküne kopyalanır veya `main` dalı GitHub üzerinden deploy edilir. Görsel dosyalar repoda yoksa sunucuya ayrıca yüklenmelidir.
+Formlar [FormFlow](https://formflow.omerfarukgunduz.com/) üzerinden gönderilir. API anahtarı `index.html` içinde tanımlıdır; FormFlow panelinde site domain’inin doğrulanmış olması gerekir.

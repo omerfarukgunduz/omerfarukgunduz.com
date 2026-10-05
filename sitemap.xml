@@ -3,16 +3,10 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://omerfarukgunduz.com/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://omerfarukgunduz.com/"/>
-  </url>
-  <url>
-    <loc>https://omerfarukgunduz.com/iletisim.html</loc>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://omerfarukgunduz.com/iletisim.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://omerfarukgunduz.com/"/>
   </url>
 </urlset>
