@@ -1,21 +1,49 @@
-# 🚀 Ömer Faruk Gündüz | Portfolio
+# Ömer Faruk Gündüz — Portföy
 
-Modern web teknolojileri ve görsel sanatları birleştiren hibrit portföy projesi.
+Yazılım geliştirme ve görsel içerik hizmetlerini tanıtan tek sayfalık kişisel site.
 
-## 🔗 Live Demo
-* **[omerfarukgunduz.com](https://omerfarukgunduz.com/)**
+**Canlı:** [omerfarukgunduz.com](https://omerfarukgunduz.com/)
 
-## 🛠️ Stack
-* **UI:** HTML5, Tailwind CSS (Glassmorphism)
-* **JS:** Vanilla JS (Intersection Observer, Scroll Logic)
-* **Animasyon:** Custom CSS Keyframes & Typed.js logic
+## Teknoloji
 
-## ✨ Özellikler
-* 📱 **Tam Responsive:** Tüm cihazlarla uyumlu.
-* 🖱️ **Cursor Glow:** Masaüstünde fareyi takip eden soft ışık.
-* 📊 **Scroll Progress:** Dinamik dairesel ilerleme çubuğu.
-* ⚡ **Performans:** Minimum kütüphane, maksimum hız.
+- **HTML5** — anasayfa, iletişim sayfası
+- **CSS** — gömülü stiller (açık tema, responsive, `prefers-reduced-motion`)
+- **Vanilla JavaScript** — menü, scroll ilerleme, yazı animasyonu, FormFlow iletişim formu
+- **FormFlow API** — iletişim formu gönderimi
+- **Instagram embed.js** — görsel çalışmalar bölümü
 
-## 📁 Yapı
-* `index.html`: Ana yapı, CSS ve JS tek dosyada.
-* `tailwind.config`: Özel renk paleti ve animasyonlar.
+Harici UI framework yok; bağımlılık minimum.
+
+## Özellikler
+
+- Tam responsive (mobil menü, güvenli alan / safe area)
+- Projeler: tıklanabilir kartlar, ekran görüntüsü alanları
+- SEO: canonical, Open Graph, Twitter kartları, Schema.org (`Person`, proje listesi)
+- Erişilebilirlik: skip link, ARIA, klavye ile menü kapatma
+
+## Dosya yapısı
+
+| Dosya | Açıklama |
+|--------|-----------|
+| `index.html` | Ana sayfa (stil + script tek dosyada) |
+| `iletisim.html` | Bağımsız iletişim formu (FormFlow) |
+| `ofg.png` | Favicon ve marka logosu |
+| `ofg_portre.png` | Hakkımda portresi ve paylaşım önizlemesi (sunucuda, repoda opsiyonel) |
+| `proje1.png` … `proje6.png` | Proje kartı ekran görüntüleri (sunucuda) |
+| `robots.txt`, `sitemap.xml` | Arama motoru |
+
+## İletişim formu
+
+Formlar [FormFlow](https://formflow.omerfarukgunduz.com/) üzerinden gönderilir. API anahtarı `index.html` ve `iletisim.html` içinde tanımlıdır; FormFlow panelinde site domain’inin doğrulanmış olması gerekir.
+
+## Yerel önizleme
+
+```bash
+python3 -m http.server 8080
+```
+
+Tarayıcıda `http://localhost:8080/` açın. Statik dosyalar (portre, proje görselleri) yerelde yoksa kartlarda placeholder görünür.
+
+## Dağıtım
+
+Statik dosyalar IIS / Plesk köküne kopyalanır veya `main` dalı GitHub üzerinden deploy edilir. Görsel dosyalar repoda yoksa sunucuya ayrıca yüklenmelidir.
